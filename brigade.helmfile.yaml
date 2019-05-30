@@ -10,7 +10,7 @@ releases:
   chart: brigade/brigade
   values:
   - brigade-github-app:
-      enabled: true
+      enabled: false
     rbac:
       enabled: true
     registry: brigadecore
@@ -25,6 +25,7 @@ releases:
   values:
   - rbac:
       enabled: true
+    sharedSecret: {{ requiredEnv "BRIGADE_PROJECT_SECRET" }}
     github:
       key: |
 {{ readFile (requiredEnv "BRIGADE_GITHUB_APP_KEY") | indent 8 }}

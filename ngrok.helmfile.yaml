@@ -10,4 +10,4 @@ releases:
     service:
       type: NodePort
     expose:
-      service: brigade-brigade-github-app:80
+      service: brigade-github-app-brigade-github-app:80
