@@ -1,0 +1,13 @@
+repositories:
+- name: sp
+  url: https://stefanprodan.github.io/k8s-podinfo
+
+releases:
+- name: tunnel
+  chart: sp/ngrok
+  values:
+  - token: {{ requiredEnv "NGROK_TOKEN" }}
+    service:
+      type: NodePort
+    expose:
+      service: brigade-brigade-github-app:80

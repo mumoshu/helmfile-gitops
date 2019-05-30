@@ -1,0 +1,14 @@
+repositories:
+- name: flagger
+  url: https://flagger.app
+
+releases:
+- name: flagger
+  chart: flagger/flagger
+  namespace: istio-system
+  values:
+  - metricsServer: http://prometheus.istio-system:9090
+    slack:
+      url: https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK
+      channel: general
+      user: flagger

@@ -1,0 +1,8 @@
+repositories:
+- name: polaris
+  url: git+https://github.com/reactiveops/polaris@deploy/helm?ref=master
+
+releases:
+- name: polaris
+  chart: polaris/polaris
+  namespace: polaris

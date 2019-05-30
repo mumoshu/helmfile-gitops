@@ -1,0 +1,30 @@
+helmfiles:
+- ngrok.helmfile.yaml
+
+repositories:
+- name: brigade
+  url: https://brigadecore.github.io/charts
+
+releases:
+- name: brigade
+  chart: brigade/brigade
+  values:
+  - brigade-github-app:
+      enabled: true
+    rbac:
+      enabled: true
+    registry: brigadecore
+    name: brigade-github-app
+    github:
+      key: |
+{{ readFile (requiredEnv "BRIGADE_GITHUB_APP_KEY") | indent 8 }}
+    checkSuiteOnPR: true
+    appID: {{ requiredEnv "BRIGADE_GITHUB_APP_ID" }}
+- name: brigade-github-app
+  chart: brigade/brigade-github-app
+  values:
+  - rbac:
+      enabled: true
+    github:
+      key: |
+{{ readFile (requiredEnv "BRIGADE_GITHUB_APP_KEY") | indent 8 }}
