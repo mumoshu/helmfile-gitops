@@ -28,3 +28,21 @@ releases:
     github:
       key: |
 {{ readFile (requiredEnv "BRIGADE_GITHUB_APP_KEY") | indent 8 }}
+- name: project
+  chart: brigade/brigade-project
+  values:
+  - project: "mumoshu/helmfile-gitops"
+    repository: "github.com/mumoshu/helmfile-gitops"
+    cloneURL: "git@github.com:mumoshu/helmfile-gitops.git"
+    secrets: {}
+    github:
+      token: {{ requiredEnv "GITHUB_TOKEN" }}
+    sharedSecret: {{ requiredEnv "BRIGADE_PROJECT_SECRET" }}
+    defaultScript: |
+      const { events, Job } = require("brigadier")
+      function run(e, project) {
+        console.log("hello default script")
+      }
+      events.on("run", run)
+    sshKey:
+{{ readFile (requiredEnv "SSH_KEY") | indent 6 }}

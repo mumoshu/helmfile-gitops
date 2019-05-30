@@ -27,8 +27,16 @@ tasks:
       kubectl port-forward --namespace polaris svc/polaris-dashboard 8082:80 &
       open http://localhost:8082
 
+  ngrok-setup:
+    script: |
+      open https://dashboard.ngrok.com/get-started
+
   ngrok-status:
     script: |
       ngrok_port=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services tunnel-ngrok)
       node_ip=$(multipass ls | grep primary | awk '{ print $3 }')
       open http://$node_ip:$ngrok_port/status
+
+  brig-dashboard:
+    script: |
+      brig dashboard
