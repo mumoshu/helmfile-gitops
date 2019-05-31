@@ -24,7 +24,7 @@ Appendix: The end of Kustomize vs Helm argument
 ---
 @title[State-of-the-Art GitOps Solutions]
 
-### State-of-the-Art GitOps Solutions
+## State-of-the-Art GitOps Solutions
 
 - Weaveworks [Flux](https://github.com/weaveworks/flux) Operator*
 - [Argo CD](https://github.com/argoproj/argo-cd)
@@ -32,7 +32,7 @@ Appendix: The end of Kustomize vs Helm argument
 ---
 @title[Flux]
 
-#### Flux
+## Flux
 
 > ![Flux Deployment Pipeline](https://github.com/weaveworks/flux/raw/master/site/images/deployment-pipeline.png)
 > https://github.com/weaveworks/flux
@@ -43,7 +43,7 @@ Appendix: The end of Kustomize vs Helm argument
 ---
 @title[Argo CD]
 
-#### Argo CD
+## Argo CD
 
 > ![Argo CD Architecture](https://argoproj.github.io/argo-cd/assets/argocd_architecture.png)
 > https://argoproj.github.io/argo-cd/#architecture
@@ -64,14 +64,14 @@ PLUG: Wanna declaratively manage Argo CD projects? Use [the community Helm chart
 ---
 @title[Limited Customizability]
 
-### Limited Customizability
+## Limited Customizability
 
 `flux` and `argocd` has limited extension points. For example, `argocd` has various "hooks" but you stale once get to think "Oh, I wanna argocd to use `helm upgrade` to manage my app as a helm release!"
 
 ---
 @title[High Nummber of Total Moving-Parts]
 
-### High Nummber of Total Moving-Parts
+## High Nummber of Total Moving-Parts
 
 Let think about building an end-to-end CI/CD pipeline that leverages GitOps.
 
@@ -112,14 +112,14 @@ SINGLE system that handles BOTH CI and CD
 ---
 @title[Every aspect of CI/CD pipelines should be customizable]
 
-### Every aspect of CI/CD pipelines should be customizable
+## Every aspect of CI/CD pipelines should be customizable
 
 Run any workflow composed of scripts and K8s pods programmed with a turing-complete language.
 
 ---
 @title[Single Platform that is capable of handling both CI and CD use-cases]
 
-### Single Platform that is capable of handling both CI and CD use-cases
+## Single Platform that is capable of handling both CI and CD use-cases
 
 Divergence between CIOps and GitOps should be small, so that we can easily and/or gradually migrate from CIOps(push-based) to GitOps(pull-based), or vice versa.
 
@@ -128,7 +128,7 @@ Build upon an unviersal workflow engine or alike that is capable of achieving bo
 ---
 @title[Be declarative!]
 
-### Be declarative!
+## Be declarative!
 
 Cluster operations are hard and the life is short. You should focus on expressing what you want to do, not how.
 
@@ -161,7 +161,7 @@ The only dependencies are GitHub and Kubernetes
 ---
 @title[Prereqs.]
 
-### Prereqs.
+## Prereqs.
 
 1. Grab and install the latest release of [variant](https://github.com/mumoshu/variant)
 2. Create a GitHub App for Brigade following [this guide](https://github.com/brigadecore/brigade-github-app/blob/c04ea3fa28f2e0a3a64d74131bfef1fe7698355a/README.md#1-create-a-github-app)
@@ -179,7 +179,7 @@ The only dependencies are GitHub and Kubernetes
 ---
 @title[Bootstrap]
 
-### Bootstrap
+## Bootstrap
 
 Run:
 
@@ -198,7 +198,7 @@ This will install:
 ---
 @title[Local Development]
 
-### Local Development
+## Local Development
 
 Run:
 
@@ -211,7 +211,7 @@ $ helmfile apply
 ---
 @title[Remote Deployment]
 
-### Remote Deployment
+## Remote Deployment
 
 Run:
 
@@ -225,21 +225,21 @@ $ hub pull-request
 ---
 @title[Review]
 
-### Review
+## Review
 
 Open the PR URL printed by `hub` and see:
 
 ---
 @title[Build Status]
 
-### Build Status
+## Build Status
 
 TBD
 
 ---
 @title[Merge]
 
-### Merge
+## Merge
 
 Merge the pull request into `master`, so that the `brigade` pulls the commit and applies it with `helmfile`.
 
@@ -248,7 +248,7 @@ Voila! You've implemented GitOps.
 ---
 @title[Implementation]
 
-### Implementation
+## Implementation
 
 The `brigade` script looks like:
 
@@ -273,7 +273,7 @@ https://gitpitch.com/mumoshu/helmfile-gitops
 ---
 @title[Everyone Does This]
 
-### Everyone Does This
+## Everyone Does This
 
 - `helm template mychart | kubectl apply -f`
 - `helm template mychart --outputs-dir manifests/ && (kustomize build | kubectl apply -f -)`
@@ -281,7 +281,7 @@ https://gitpitch.com/mumoshu/helmfile-gitops
 ---
 @title[Don't use `kubectl apply -f`]
 
-### Don't use `kubectl apply -f`
+## Don't use `kubectl apply -f`
 
 When you want:
 
@@ -293,7 +293,7 @@ When you want:
 ---
 @title[We Can Do Better]
 
-### We Can Do Better
+## We Can Do Better
 
 - (Optionally) Generate K8s manifests from Helm chart
 - Patch K8s manifests with Kustomize (JSON Patch and Strategic-Merge Patch available)
@@ -302,7 +302,7 @@ When you want:
 ---
 @title[Example: helm-x]
 
-### Example: helm-x
+## Example: helm-x
 
 Yet Another Shamelss Plug: https://github.com/mumoshu/helm-x
 
