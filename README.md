@@ -1,6 +1,9 @@
-# Highly Customizable CI and GitOps pipeline with Helm
+## State of the Art of GitOps with Helm
 
-This project is a demonstration of a highly customizable GitOps pipeline built with [`helmfile`](https://github.com/roboll/helmfile) and [`brigade`](https://github.com/brigadecore/brigade).
+Highly customizable GitOps pipeline built with:
+
+- [`helmfile`](https://github.com/roboll/helmfile)
+- [`brigade`](https://github.com/brigadecore/brigade)
 
 ## Prior Arts
 
