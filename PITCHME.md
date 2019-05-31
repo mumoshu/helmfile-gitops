@@ -62,9 +62,22 @@ APPENDIX: The end of Kustomize vs Helm argumen
 PLUG: Wanna declaratively manage Argo CD projects? Use [the community Helm chart](https://github.com/chatwork/charts/tree/master/argoproj-crd)
 
 ---
-@title[Problems]
+@title[Big Picture]
 
-## Problems
+## Big Picture
+
+Combo of:
+
+**CI (lint, diff, test on PUSH)**:
+Travis, CircleCI, Concourse, Jenkins, Argo CI, ...
+
+**CD (deploy/sync/reconcile on PULL)**:
+**Flux**, **Argo CD**, Spinnaker, ...
+
+---
+@title[They Aren't Perfect]
+
+## They Aren't Perfect
 
 1. Limited Customizability
 2. High Number of Total Moving-Parts
@@ -84,33 +97,18 @@ PLUG: Wanna declaratively manage Argo CD projects? Use [the community Helm chart
 Let think about building an end-to-end CI/CD pipeline that leverages GitOps.
 
 ---
-@title[Existing Solution]
+@title[Question]
 
-## Existing Solution
-
-Combo of:
-
-**CI (lint, diff, test on PUSH)**:
-Travis, CircleCI, Concourse, Jenkins, Argo CI, ...
-
-**CD (deploy/sync/reconcile on PULL)**:
-Flux, Argo CD, Spinnaker, ...
-
----
-@title[Why Not?]
-
-## Why Not?
-
-Go head if you have a big team.
+## Question
 
 What if your have only a handful of folks to maintain the CI and CD pipeline?
 
 ---
-@title[Goal]
+@title[Goal: Filling the MISSING PIECE]
 
-## Goal
+## Goal: Filling the MISSING PIECE
 
-SINGLE system that handles BOTH CI and CD
+**Single** system that handles both **CI** and **CD**
 
 ---
 @title[Issues]
@@ -134,26 +132,29 @@ Divergence between CIOps and GitOps should be small, so that we can easily and/o
 Build upon an unviersal workflow engine or alike that is capable of achieving both CIOps and GitOps.
 
 ---
-@title[Be declarative!]
+@title[Baseline: Be declarative!]
 
-## Be declarative!
+## Baseline: Be declarative!
 
 Cluster operations are hard and the life is short. You should focus on expressing what you want to do, not how.
 
 Leverage declarative management. Rely on K8s and K8s operators to reconsile cluster states to the desired states. You focus on writing declarative specs of your K8s apps.
 
 ---
-@title[Single Tool?]
+@title[Example: The Single Tool]
 
-## Single Tool?
+## Example: The Single Tool
 
-- Single Tool that is capable of both local development and remote production usages?
-- Is that really a thing? You see...
+- `brigade` is K8s scripting system
+- Basically a CI system
+- But you can write pipelines in a turing-complete language(JavaScript)
+
+![Brigade](https://docs.brigade.sh/img/design-02.png)
 
 ---
-@title[Design]
+@title[Example Pipeline]
 
-## Design
+## Example Pipeline
 
 - [brigade](https://github.com/brigadecore/brigade)(an open, event-driven K8s scripting platform) as an universal workflow engine that runs both CI and GitOps/CD pipelines
 - [helmfile](https://github.com/roboll/helmfile) to declaratively manage all the apps on K8s
