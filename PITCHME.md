@@ -146,7 +146,6 @@ https://github.com/brigadecore/brigade
 
 ## Prereqs.
 
-1. Grab and install the latest release of [variant](https://github.com/mumoshu/variant)
 2. Create a GitHub App for Brigade following [this guide](https://github.com/brigadecore/brigade-github-app/blob/c04ea3fa28f2e0a3a64d74131bfef1fe7698355a/README.md#1-create-a-github-app)
 3. Set envvars:
 
@@ -309,7 +308,7 @@ function run(cmd) {
         "mkdir -p " + dest,
         "cp -a /src/* " + dest,
         "cd " + dest,
-        `variant ${cmd}`,
+        `helmfile ${cmd}`,
     ]
     job.run()
 }
