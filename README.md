@@ -128,6 +128,8 @@ releases:
   - nameOverride: frontend
 ```
 
+See [helmfile.yaml](helmfile.yaml) for the full example.
+
 a.k.a
 
 ```
@@ -226,6 +228,8 @@ events.on("push", (e, p) => {
   }
 });
 ```
+
+See [brigade.js](brigade.js) for full example.
 
 ### The utility function
 
