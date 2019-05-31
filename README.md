@@ -68,11 +68,13 @@ Let think about building an end-to-end CI/CD pipeline that leverages GitOps.
 
 ## Question
 
-What if your have only a handful of folks to maintain the CI and CD pipeline?
+What if your have only a handful of folks to maintain CI and CD systems?
 
 ## Goal: Filling the MISSING PIECE
 
-**Single** system that handles both **CI** and **CD**
+- Flux
+- Argo CD
+- MISSING PIECE = **Single** system that handles both **CI** and **CD**
 
 ## Issues
 
