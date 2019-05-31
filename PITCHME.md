@@ -54,8 +54,8 @@ HOW: Pull desired state / Sync K8s resources Git → Cluster
 
 ## Argo CD
 
-- `argocd` fetches git commits and reconcile K8s resources
-- "argocd config management plugin" to plug-in any K8s manifests builder(ex. ksonnet, kubecfg, etc.)
+- Fetches git commits to reconcile K8s resources
+- Plug-in any K8s manifests builder (kustomize, helm, ksonnet, kubecfg, etc.)
 
 > ![Argo CD Architecture](https://argoproj.github.io/argo-cd/assets/argocd_architecture.png)
 > https://argoproj.github.io/argo-cd/#architecture
