@@ -140,16 +140,20 @@ SPOILER: We use this locally and remotely:
 `helmfile.yaml`:
 
 ```
-repositories:
-- name: flagger
-  url: https://flagger.app
-
 releases:
 - name: frontend
   chart: flagger/podinfo
   namespace: test
   values:
   - nameOverride: frontend
+```
+
+a.k.a
+
+```
+helm upgrade --install \
+  frontend flagger/podinfo \
+  --set nameOverride=frontend`
 ```
 
 ### Bootstrap
