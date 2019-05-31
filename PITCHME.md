@@ -2,7 +2,8 @@
 
 This project is a demonstration of a highly customizable GitOps pipeline built with [`helmfile`](https://github.com/roboll/helmfile) and [`brigade`](https://github.com/brigadecore/brigade).
 
-## Prior Arts
+---
+@title[Prior Arts]
 
 1. **Weaveworks [Flux](https://github.com/weaveworks/flux) Operator + Raw K8s manifests OR Helm Chart**:
 2. **[Argo CD](https://github.com/argoproj/argo-cd) + K8s Manifests OR Helm Chart OR Helmfile**:
@@ -25,7 +26,8 @@ This project is a demonstration of a highly customizable GitOps pipeline built w
 
 PLUG: Wanna declaratively manage Argo CD projects? Use [the community Helm chart](https://github.com/chatwork/charts/tree/master/argoproj-crd)
 
-## Problem
+---
+@title[Problem]
 
 ### Sub-optimal Customizability
 
@@ -44,7 +46,8 @@ Go head if you have a big team. But what if your have only a handful of folks to
 
 Can't we have a single versatile system that handles both CI and CD?
 
-## Goals
+---
+@title[Goals]
 
 ### Every aspect of CI/CD pipelines should be customizable
 
@@ -64,7 +67,8 @@ Leverage declarative management. Rely on K8s and K8s operators to reconsile clus
 
 ### Single Tool that is capable of both local development and remote production usages.
 
-## Design
+---
+@title[Design]
 
 - [brigade](https://github.com/brigadecore/brigade)(an open, event-driven K8s scripting platform) as an universal workflow engine that runs both CI and GitOps/CD pipelines
 - [helmfile](https://github.com/roboll/helmfile) to declaratively manage all the apps on K8s
@@ -72,7 +76,8 @@ Leverage declarative management. Rely on K8s and K8s operators to reconsile clus
 
 The only dependencies are GitHub and Kubernetes
 
-## Install
+---
+@title[Install]
 
 1. Grab and install the latest release of [variant](https://github.com/mumoshu/variant)
 2. Create a GitHub App for Brigade following [this guide](https://github.com/brigadecore/brigade-github-app/blob/c04ea3fa28f2e0a3a64d74131bfef1fe7698355a/README.md#1-create-a-github-app)
@@ -87,7 +92,8 @@ The only dependencies are GitHub and Kubernetes
    export GITHUB_TOKEN=<Used for updating commit/pull request statuses>
    ```
 
-## Usage
+---
+@title[Usage]
 
 ```
 $ variant
