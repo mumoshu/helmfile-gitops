@@ -278,7 +278,39 @@ Voila! You've implemented GitOps.
 The `brigade` script looks like:
 
 ```javascript
-// TODO
+const { events, Job , Group} = require("brigadier")
+const dest = "/workspace"
+const image = "mumoshu/helmfile-gitops:dev"
+
+events.on("push", (e, p) => {
+  console.log(e.payload)
+  var gh = JSON.parse(e.payload)
+  if (e.type == "pull_request") {
+    // Run "helmfile diff" for PRs
+    run("diff")
+  } else {
+    // Run "helmfile apply" for commits to master
+    run("apply")
+  }
+});
+```
+
+---
+@title[The utility function]
+
+## The utility function
+
+```
+function run(cmd) {
+    var job = new Job(cmd, image)
+    job.tasks = [
+        "mkdir -p " + dest,
+        "cp -a /src/* " + dest,
+        "cd " + dest,
+        `variant ${cmd}`,
+    ]
+    job.run()
+}
 ```
 
 ---
