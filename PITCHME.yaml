@@ -16,9 +16,3 @@ footnote : "Highly Flexible CI and GitOps pipeline using Helmfile and Brigade"
 
 # Doc: https://gitpitch.com/docs/settings/published
 published : true
-
-# Twitter Card Settings [Pro Only]
-# Doc: https://gitpitch.com/docs/settings/twitter-card
-title : "Highly Flexible CI and GitOps pipeline using Helmfile and Brigade"
-description : "Built a highly flexiblie CI and GitOps pipeline with minimum moving parts"
-thumbnail : https://gitpitch.com/gpimg/tutorial-thumb.png
