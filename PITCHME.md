@@ -34,8 +34,9 @@ APPENDIX: The end of Kustomize vs Helm argumen
 
 ## State-of-the-Art GitOps Solutions
 
-- Weaveworks [Flux](https://github.com/weaveworks/flux) Operator
-- [Argo CD](https://github.com/argoproj/argo-cd)
+1. Weaveworks [Flux](https://github.com/weaveworks/flux) Operator
+2. [Argo CD](https://github.com/argoproj/argo-cd)
+3. MISSING PIECE
 
 ---
 @title[Flux]
@@ -62,22 +63,9 @@ APPENDIX: The end of Kustomize vs Helm argumen
 PLUG: Wanna declaratively manage Argo CD projects? Use [the community Helm chart](https://github.com/chatwork/charts/tree/master/argoproj-crd)
 
 ---
-@title[Big Picture]
+@title[Known Problems]
 
-## Big Picture
-
-Combo of:
-
-**CI (lint, diff, test on PUSH)**:
-Travis, CircleCI, Concourse, Jenkins, Argo CI, ...
-
-**CD (deploy/sync/reconcile on PULL)**:
-**Flux**, **Argo CD**, Spinnaker, ...
-
----
-@title[They Aren't Perfect]
-
-## They Aren't Perfect
+## Known Problems
 
 1. Limited Customizability
 2. High Number of Total Moving-Parts
@@ -87,21 +75,25 @@ Travis, CircleCI, Concourse, Jenkins, Argo CI, ...
 
 ## Limited Customizability
 
-`flux` and `argocd` has limited extension points. For example, `argocd` has various "hooks" but you stale once get to think "Oh, I wanna argocd to use `helm upgrade` to manage my app as a helm release!"
+`flux` and `argocd` has limited extension points.
+
+ex) `argocd` supports custom "hooks".
+
+- But the deployment is hard-coded to `kubectl apply`.
+- How `helm install` it?
 
 ---
 @title[High Nummber of Total Moving-Parts]
 
 ## High Nummber of Total Moving-Parts
 
-Let think about building an end-to-end CI/CD pipeline that leverages GitOps.
+Worth maintaining both CI and CD systems separately? Your team size?
 
----
-@title[Question]
+**CI (lint, diff, test on PUSH)**:
+Travis, CircleCI, Concourse, Jenkins, Argo CI, ...
 
-## Question
-
-What if your have only a handful of folks to maintain CI and CD systems?
+**CD (deploy/sync/reconcile on PULL)**:
+**Flux**, **Argo CD**, Spinnaker, ...
 
 ---
 @title[Goal: Filling the MISSING PIECE]
@@ -320,9 +312,22 @@ function run(cmd) {
 ```
 
 ---
+@title[Great!]
+
+## Great!
+
+Another GitOps solution that helps!
+
+- Flux
+- Argo CD
+- Brigade (PROPOSED!)
+
+---
 @title[Fin.]
 
 ## Fin.
+
+Try youself!
 
 https://gitpitch.com/mumoshu/helmfile-gitops
 
