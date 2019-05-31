@@ -100,6 +100,8 @@ Leverage declarative management. Rely on K8s and K8s operators to reconsile clus
 
 ![Brigade](https://docs.brigade.sh/img/design-02.png)
 
+https://github.com/brigadecore/brigade
+
 ## Example Pipeline
 
 - [brigade](https://github.com/brigadecore/brigade)(an open, event-driven K8s scripting platform) as an universal workflow engine that runs both CI and GitOps/CD pipelines

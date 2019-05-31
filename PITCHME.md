@@ -151,6 +151,8 @@ Leverage declarative management. Rely on K8s and K8s operators to reconsile clus
 
 ![Brigade](https://docs.brigade.sh/img/design-02.png)
 
+https://github.com/brigadecore/brigade
+
 ---
 @title[Example Pipeline]
 
