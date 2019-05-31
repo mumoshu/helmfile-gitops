@@ -4,18 +4,6 @@ Building highly customizable GitOps pipeline built with Helm
 
 APPENDIX: The end of Kustomize vs Helm argumen
 
-### About Me
-
-@mumoshu
-
-AWS Container Hero
-
-OSS enthusiast maintaining 10+ K8s-related OSS:
-- [kubernetes-incubator/kube-aws](https://github.com/kubernetes-incubator/kube-aws),
-- [weaveworks/eksctl](https://github.com/weaveworks/eksctl)
-- [roboll/helmfile](https://github.com/roboll/helmfile)
-- [brigadecore/brigade](https://github.com/brigadecore/brigade)
-
 ## What is Helm
 
 - Helm is a package manager for K8s
@@ -289,3 +277,20 @@ $ helm x upgrade --install  myapp PATH/TO/MANIFESTS_OR_CHART --version 1.2.4 \
   --strategic-merge-patch path/to/strategicmerge.patch.yaml \
   --jsonpatch path/to/json.patch.yaml
 ```
+
+## Fin.
+
+Thanks!
+
+Who the author was?
+
+@mumoshu
+
+AWS Container Hero
+
+OSS enthusiast maintaining 10+ K8s-related OSS:
+
+- [kubernetes-incubator/kube-aws](https://github.com/kubernetes-incubator/kube-aws),
+- [weaveworks/eksctl](https://github.com/weaveworks/eksctl)
+- [roboll/helmfile](https://github.com/roboll/helmfile)
+- [brigadecore/brigade](https://github.com/brigadecore/brigade)
