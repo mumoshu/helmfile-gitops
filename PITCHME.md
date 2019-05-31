@@ -110,8 +110,7 @@ Travis, CircleCI, Concourse, Jenkins, Argo CI, ...
 ## Example: The Single Tool
 
 - `brigade` is K8s scripting system
-- Basically a CI system
-- But you can write pipelines in a turing-complete language(JavaScript)
+- Basically CI system whose pipelines are written in JavaScript(Turing-Complete!)
 
 ![Brigade](https://docs.brigade.sh/img/design-02.png)
 
