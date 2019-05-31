@@ -148,15 +148,24 @@ Leverage declarative management. Rely on K8s and K8s operators to reconsile clus
 https://github.com/brigadecore/brigade
 
 ---
-@title[Example Pipeline]
+@title[Example Solution]
 
-## Example Pipeline
+## Example Solution
 
 - [brigade](https://github.com/brigadecore/brigade)(an open, event-driven K8s scripting platform) as an universal workflow engine that runs both CI and GitOps/CD pipelines
-- [helmfile](https://github.com/roboll/helmfile) to declaratively manage all the apps on K8s
-- [variant](https://github.com/mumoshu/variant) as a task runner. Alternatively use `make` or whatever.
 
-The only dependencies are GitHub and Kubernetes
+- [helmfile](https://github.com/roboll/helmfile) to declaratively manage all the apps on K8s. **Use whatever you like tho.**
+
+---
+@title[Recipe]
+
+## Recipe
+
+1. Write the desired state of your cluster
+2. Edit & develop locally
+3. Push Git commit
+4. CI: Test on PR
+5. CD: Apply on commit to `master`
 
 ---
 @title[Install]
@@ -180,6 +189,28 @@ The only dependencies are GitHub and Kubernetes
    export SSH_KEY=$HOME/.ssh/id_rsa (Or whatever ssh private key you want Brigade to use while git-cloning private Git repos)
    export GITHUB_TOKEN=<Used for updating commit/pull request statuses>
    ```
+
+---
+@title[The Desired State]
+
+## The Desired State
+
+SPOILER: We use this locally and remotely:
+
+`helmfile.yaml`:
+
+```
+repositories:
+- name: flagger
+  url: https://flagger.app
+
+releases:
+- name: frontend
+  chart: flagger/podinfo
+  namespace: test
+  values:
+  - nameOverride: frontend
+```
 
 ---
 @title[Bootstrap]
@@ -405,13 +436,19 @@ WAHT can be:
 - Directory containing K8s maniefsts
 
 ---
-@title[Fin.]
+@title[Great!]
 
-## Fin.
+## Great!
 
-Thanks!
+You've got everything!
 
-Who the author was?
+- Universal system for running CI and CD pipelines (brigade)
+- Universal tool for deploying whatever (helm-x, helmfile)
+
+---
+@title[Who the author was?]
+
+## Who the author was?
 
 @mumoshu
 
