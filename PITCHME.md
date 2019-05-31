@@ -8,7 +8,8 @@ This project is a demonstration of a highly customizable GitOps pipeline built w
 1. **Weaveworks [Flux](https://github.com/weaveworks/flux) Operator + Raw K8s manifests OR Helm Chart**:
 2. **[Argo CD](https://github.com/argoproj/argo-cd) + K8s Manifests OR Helm Chart OR Helmfile**:
 
-### Flux
+---
+@title[Flux]
 
 > ![Flux Deployment Pipeline](https://github.com/weaveworks/flux/raw/master/site/images/deployment-pipeline.png)
 > https://github.com/weaveworks/flux
@@ -16,7 +17,8 @@ This project is a demonstration of a highly customizable GitOps pipeline built w
 - `flux` fetches git commits and reconsile K8s resources.
 - `helm-operator` reconciles `HelmRelease` resources to reconsile K8s resources.
 
-### Argo CD
+---
+@title[Argo CD]
 
 > ![Argo CD Architecture](https://argoproj.github.io/argo-cd/assets/argocd_architecture.png)
 > https://argoproj.github.io/argo-cd/#architecture
@@ -29,11 +31,13 @@ PLUG: Wanna declaratively manage Argo CD projects? Use [the community Helm chart
 ---
 @title[Problem]
 
-### Sub-optimal Customizability
+---
+@title[Sub-optimal Customizability]
 
 `flux` and `argocd` has limited extension points. For example, `argocd` has various "hooks" but you stale once get to think "Oh, I wanna argocd to use `helm upgrade` to manage my app as a helm release!"
 
-### High Nummber of Total Moving-Parts
+---
+@title[High Nummber of Total Moving-Parts]
 
 Let think about building an end-to-end CI/CD pipeline that leverages GitOps.
 
@@ -49,23 +53,27 @@ Can't we have a single versatile system that handles both CI and CD?
 ---
 @title[Goals]
 
-### Every aspect of CI/CD pipelines should be customizable
+---
+@title[Every aspect of CI/CD pipelines should be customizable]
 
 Run any workflow composed of scripts and K8s pods programmed with a turing-complete language.
 
-### Single Platform that is capable of handling both CI and CD use-cases
+---
+@title[Single Platform that is capable of handling both CI and CD use-cases]
 
 Divergence between CIOps and GitOps should be small, so that we can easily and/or gradually migrate from CIOps(push-based) to GitOps(pull-based), or vice versa.
 
 Build upon an unviersal workflow engine or alike that is capable of achieving both CIOps and GitOps.
 
-### Be declarative!
+---
+@title[Be declarative!]
 
 Cluster operations are hard and the life is short. You should focus on expressing what you want to do, not how.
 
 Leverage declarative management. Rely on K8s and K8s operators to reconsile cluster states to the desired states. You focus on writing declarative specs of your K8s apps.
 
-### Single Tool that is capable of both local development and remote production usages.
+---
+@title[Single Tool that is capable of both local development and remote production usages.]
 
 ---
 @title[Design]
