@@ -9,7 +9,8 @@ Appendix: The end of Kustomize vs Helm argument
 
 ## What is GitOps
 
-![What is GitOps?](https://images.contentstack.io/v3/assets/blt300387d93dabf50e/blt15812c9fe056ba3b/5ce4448f32fd88a3767ee9a3/download)
+> ![What is GitOps?](https://images.contentstack.io/v3/assets/blt300387d93dabf50e/blt15812c9fe056ba3b/5ce4448f32fd88a3767ee9a3/download)
+> https://www.weave.works/technologies/gitops/
 
 - Pull Git commits
 - Sync K8s resources Git<->Cluster
