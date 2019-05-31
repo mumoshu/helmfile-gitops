@@ -5,7 +5,7 @@
 
 Building highly customizable GitOps pipeline built with Helm
 
-APPENDIX: The end of Kustomize vs Helm argumen
+APPENDIX: The end of Kustomize vs Helm argument
 
 ---
 @title[What is Helm]
