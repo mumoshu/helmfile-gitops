@@ -34,7 +34,7 @@ APPENDIX: The end of Kustomize vs Helm argumen
 
 ## State-of-the-Art GitOps Solutions
 
-- Weaveworks [Flux](https://github.com/weaveworks/flux) Operator*
+- Weaveworks [Flux](https://github.com/weaveworks/flux) Operator
 - [Argo CD](https://github.com/argoproj/argo-cd)
 
 ---
