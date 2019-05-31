@@ -43,22 +43,22 @@ HOW: Pull desired state / Sync K8s resources Git → Cluster
 
 ## Flux
 
-> ![Flux Deployment Pipeline](https://github.com/weaveworks/flux/raw/master/site/images/deployment-pipeline.png)
-> https://github.com/weaveworks/flux
-
 - `flux` fetches git commits and reconsile K8s resources.
 - `helm-operator` reconciles `HelmRelease` resources to reconsile K8s resources.
+
+> ![Flux Deployment Pipeline](https://github.com/weaveworks/flux/raw/master/site/images/deployment-pipeline.png)
+> https://github.com/weaveworks/flux
 
 ---
 @title[Argo CD]
 
 ## Argo CD
 
-> ![Argo CD Architecture](https://argoproj.github.io/argo-cd/assets/argocd_architecture.png)
-> https://argoproj.github.io/argo-cd/#architecture
-
 - `argocd` fetches git commits and reconcile K8s resources
 - "argocd config management plugin" to plug-in any K8s manifests builder(ex. ksonnet, kubecfg, etc.)
+
+> ![Argo CD Architecture](https://argoproj.github.io/argo-cd/assets/argocd_architecture.png)
+> https://argoproj.github.io/argo-cd/#architecture
 
 PLUG: Wanna declaratively manage Argo CD projects? Use [the community Helm chart](https://github.com/chatwork/charts/tree/master/argoproj-crd)
 
