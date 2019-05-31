@@ -150,7 +150,7 @@ $ helmfile diff
 $ helmfile apply
 ```
 
-#### This will install:
+#### `helmfile apply` will install...
 
 - Brigade Server
 - Brigade GitHub App

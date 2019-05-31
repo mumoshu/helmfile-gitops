@@ -202,9 +202,9 @@ $ helmfile apply
 ```
 
 ---
-@title[This will install:]
+@title[`helmfile apply` will install...]
 
-## This will install:
+## `helmfile apply` will install...
 
 - Brigade Server
 - Brigade GitHub App
