@@ -6,6 +6,9 @@ This project is a demonstration of a highly customizable GitOps pipeline built w
 
 **Weaveworks [Flux](https://github.com/weaveworks/flux) Operator + Raw K8s manifests OR Helm Chart**:
 
+> ![Deployment Pipeline](https://github.com/weaveworks/flux/raw/master/site/images/deployment-pipeline.png)
+> https://github.com/weaveworks/flux
+
 - `flux` fetches git commits and reconsile K8s resources.
 - `helm-operator` reconciles `HelmRelease` resources to reconsile K8s resources.
 
