@@ -8,6 +8,8 @@ repositories:
   url: https://kubernetes-charts.storage.googleapis.com
 - name: incubator
   url: https://kubernetes-charts-incubator.storage.googleapis.com
+- name: flagger
+  url: https://flagger.app
 
 releases:
 - name: frontend
