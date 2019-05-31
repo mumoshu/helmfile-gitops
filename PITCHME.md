@@ -11,17 +11,24 @@ Highly customizable GitOps pipeline built with:
 Appendix: The end of Kustomize vs Helm argument
 
 ---
-@title[Prior Arts]
+@title[What is GitOps]
 
-## Prior Arts
+## What is GitOps
 
-1. **Weaveworks [Flux](https://github.com/weaveworks/flux) Operator + Raw K8s manifests OR Helm Chart**:
-2. **[Argo CD](https://github.com/argoproj/argo-cd) + K8s Manifests OR Helm Chart OR Helmfile**:
+![What is GitOps?](https://images.contentstack.io/v3/assets/blt300387d93dabf50e/blt15812c9fe056ba3b/5ce4448f32fd88a3767ee9a3/download)
+
+- Pull Git commits
+- Sync K8s resources Git<->Cluster
 
 ---
-@title[Flux]
+@title[State-of-the-Art GitOps Solutions]
 
-### Flux
+### State-of-the-Art GitOps Solutions
+
+- Weaveworks [Flux](https://github.com/weaveworks/flux) Operator*
+- [Argo CD](https://github.com/argoproj/argo-cd)
+
+#### Flux
 
 > ![Flux Deployment Pipeline](https://github.com/weaveworks/flux/raw/master/site/images/deployment-pipeline.png)
 > https://github.com/weaveworks/flux
@@ -29,10 +36,7 @@ Appendix: The end of Kustomize vs Helm argument
 - `flux` fetches git commits and reconsile K8s resources.
 - `helm-operator` reconciles `HelmRelease` resources to reconsile K8s resources.
 
----
-@title[Argo CD]
-
-### Argo CD
+#### Argo CD
 
 > ![Argo CD Architecture](https://argoproj.github.io/argo-cd/assets/argocd_architecture.png)
 > https://argoproj.github.io/argo-cd/#architecture
