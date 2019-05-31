@@ -259,25 +259,18 @@ $ helmfile diff
 
 ## Review
 
-Open the PR URL printed by `hub` and see:
-
----
-@title[Build Status]
-
-## Build Status
-
-TBD
+Review the PR on GitHub.
 
 ---
 @title[Merge]
 
 ## Merge
 
-Merge the pull request into `master`, so that the `brigade` pulls the commit and applies it by (AGAIN!) running:
-
-```
-$ helmfile apply
-```
+- Merge the pull request into `master` so that
+- `brigade` pulls the commit and applies it by (AGAIN!) running:
+  ```
+  $ helmfile apply
+  ```
 
 Voila! You've implemented GitOps.
 
