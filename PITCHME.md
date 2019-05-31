@@ -3,12 +3,20 @@
 
 ## State of the Art of GitOps with Helm
 
-Highly customizable GitOps pipeline built with:
+Building highly customizable GitOps pipeline built with Helm
 
-- [`helmfile`](https://github.com/roboll/helmfile)
-- [`brigade`](https://github.com/brigadecore/brigade)
+APPENDIX: The end of Kustomize vs Helm argumen
 
-Appendix: The end of Kustomize vs Helm argument
+---
+@title[What is Helm]
+
+## What is Helm
+
+> ![What is Helm](https://helm.sh/src/img/chart-illustration.png)
+> https://helm.sh/
+
+- Helm is a package manager for K8s
+- "Package" is called "Chart" in Helm
 
 ---
 @title[What is GitOps]
