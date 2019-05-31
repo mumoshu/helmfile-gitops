@@ -30,6 +30,9 @@ PLUG: Wanna declaratively manage Argo CD projects? Use [the community Helm chart
 
 ## Problems
 
+1. Limited Customizability
+2. High Number of Total Moving-Parts
+
 ### Limited Customizability
 
 `flux` and `argocd` has limited extension points. For example, `argocd` has various "hooks" but you stale once get to think "Oh, I wanna argocd to use `helm upgrade` to manage my app as a helm release!"
@@ -69,7 +72,10 @@ Cluster operations are hard and the life is short. You should focus on expressin
 
 Leverage declarative management. Rely on K8s and K8s operators to reconsile cluster states to the desired states. You focus on writing declarative specs of your K8s apps.
 
-### Single Tool that is capable of both local development and remote production usages.
+## Single Tool?
+
+- Single Tool that is capable of both local development and remote production usages?
+- Is that really a thing? You see...
 
 ## Design
 
@@ -80,6 +86,8 @@ Leverage declarative management. Rely on K8s and K8s operators to reconsile clus
 The only dependencies are GitHub and Kubernetes
 
 ## Install
+
+### Prereqs.
 
 1. Grab and install the latest release of [variant](https://github.com/mumoshu/variant)
 2. Create a GitHub App for Brigade following [this guide](https://github.com/brigadecore/brigade-github-app/blob/c04ea3fa28f2e0a3a64d74131bfef1fe7698355a/README.md#1-create-a-github-app)
@@ -94,34 +102,65 @@ The only dependencies are GitHub and Kubernetes
    export GITHUB_TOKEN=<Used for updating commit/pull request statuses>
    ```
 
-## Usage
+### Bootstrap
+
+Run:
 
 ```
-$ variant
-Usage:
-  variant [command]
-
-Available Commands:
-  build       Create a single executable from the Variantfile
-  diff
-  env         Print currently selected environment
-  help        Help about any command
-  init        Create a Variant command
-  polaris     Open polaris dashboard in your browser
-
-Polaris: https://github.com/reactiveops/polaris
-
-  sync
-  tools
-  version     Print the version number of this command
-
-Flags:
-  -C, --color                Colorize output (default true)
-  -c, --config-file string   Path to config file
-  -h, --help                 help for variant
-      --logtostderr          write log messages to stderr (default true)
-  -o, --output string        Output format. One of: json|text|bunyan (default "text")
-  -v, --verbose              verbose output
-
-Use "variant [command] --help" for more information about a command.
+$ helmfile apply
 ```
+
+This will install:
+
+- Brigade Server
+- Brigade GitHub App
+- Brigade Project
+- In-Cluster Ngrok Tunnel (GitHub Webhooks to Brigade GitHub App
+- Other apps for demonstration purpose
+
+### Local Development
+
+Run:
+
+```
+$ git checkout -b change-blah
+$ $EDITOR helmfile.yaml
+$ helmfile apply
+```
+
+### Remote Deployment
+
+Run:
+
+```
+$ git add helmfile.yaml && \
+  git commit -m 'Change blah' && \
+  git push origin master
+$ hub pull-request
+```
+
+### Review
+
+Open the PR URL printed by `hub` and see:
+
+### Build Status
+
+TBD
+
+### Merge
+
+Merge the pull request into `master`, so that the `brigade` pulls the commit and applies it with `helmfile`.
+
+Voila! You've implemented GitOps.
+
+### Implementation
+
+The `brigade` script looks like:
+
+```javascript
+// TODO
+```
+
+## Fin.
+
+https://gitpitch.com/mumoshu/helmfile-gitops
