@@ -184,10 +184,19 @@ The only dependencies are GitHub and Kubernetes
 Run:
 
 ```
+# See what will be installed
+
+$ helmfile diff
+
+# Actually install all the things
+
 $ helmfile apply
 ```
 
-This will install:
+---
+@title[This will install:]
+
+## This will install:
 
 - Brigade Server
 - Brigade GitHub App
@@ -205,6 +214,12 @@ Run:
 ```
 $ git checkout -b change-blah
 $ $EDITOR helmfile.yaml
+```
+
+(Again,) Run:
+
+```
+$ helmfile diff
 $ helmfile apply
 ```
 
@@ -220,6 +235,12 @@ $ git add helmfile.yaml && \
   git commit -m 'Change blah' && \
   git push origin master
 $ hub pull-request
+```
+
+So that `Brigade` (Again) Runs:
+
+```
+$ helmfile diff
 ```
 
 ---
@@ -241,7 +262,11 @@ TBD
 
 ## Merge
 
-Merge the pull request into `master`, so that the `brigade` pulls the commit and applies it with `helmfile`.
+Merge the pull request into `master`, so that the `brigade` pulls the commit and applies it by (AGAIN!) running:
+
+```
+$ helmfile apply
+```
 
 Voila! You've implemented GitOps.
 
