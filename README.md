@@ -4,8 +4,8 @@ This project is a demonstration of a highly customizable GitOps pipeline built w
 
 ## Prior Arts
 
-1 **Weaveworks [Flux](https://github.com/weaveworks/flux) Operator + Raw K8s manifests OR Helm Chart**:
-2 **[Argo CD](https://github.com/argoproj/argo-cd) + K8s Manifests OR Helm Chart OR Helmfile**:
+1. **Weaveworks [Flux](https://github.com/weaveworks/flux) Operator + Raw K8s manifests OR Helm Chart**:
+2. **[Argo CD](https://github.com/argoproj/argo-cd) + K8s Manifests OR Helm Chart OR Helmfile**:
 
 ### Flux
 
