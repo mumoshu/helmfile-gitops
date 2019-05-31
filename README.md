@@ -45,16 +45,23 @@ Let think about building an end-to-end CI/CD pipeline that leverages GitOps.
 
 ## Existing Solution
 
-- Use any CI system for CI(lint, diff, test): Travis, CircleCI, Concourse, Jenkins, Argo CI, ...
-- Use any CD system for CD(deploy/sync/reconcile): Flux, Argo CD, Spinnaker, ...
+Combo of:
+
+**CI (lint, diff, test on PUSH)**:
+Travis, CircleCI, Concourse, Jenkins, Argo CI, ...
+
+**CD (deploy/sync/reconcile on PULL)**:
+Flux, Argo CD, Spinnaker, ...
+
+## Why Not?
 
 Go head if you have a big team.
 
-But what if your have only a handful of folks to maintain the CI and CD pipeline?
+What if your have only a handful of folks to maintain the CI and CD pipeline?
 
 ## Goal
 
-Can't we have a single versatile system that handles both CI and CD?
+I wanna have a single system that handles both CI and CD
 
 ## Issues
 
