@@ -312,7 +312,9 @@ $ helm install myapp mychart
 $ helm x install myapp mychart
 ```
 
-### Example: Patch and diff/install/up whatever as Helm chart
+### Usage
+
+Patch and diff/install/up whatever "as Helm chart":
 
 ```
 $ helm x [diff|install|upgrade] --install myapp WHAT --version 1.2.4 \
@@ -323,7 +325,7 @@ $ helm x [diff|install|upgrade] --install myapp WHAT --version 1.2.4 \
 
 WAHT can be:
 
-- Remote or local helm chart
+- Helm chart
 - Kustomization
 - Directory containing K8s maniefsts
 
@@ -331,8 +333,8 @@ WAHT can be:
 
 You've got everything!
 
-- Universal system for running CI and CD pipelines (brigade)
-- Universal tool for deploying whatever (helm-x, helmfile)
+1. GitOps operator (Flux or Argo CD) **OR** Universal system for running CI and CD pipelines (brigade)
+2. Universal tool for deploying whatever (helm, kustomize, k8s manifests, helm-x, helmfile)
 
 ## Who the author was?
 
