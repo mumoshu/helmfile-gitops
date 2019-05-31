@@ -369,19 +369,37 @@ When you want:
 
 ## Example: helm-x
 
-Yet Another Shamelss Plug: https://github.com/mumoshu/helm-x
+Shameless Plug: https://github.com/mumoshu/helm-x
+
+`helm`:
 
 ```
-$ helm x diff myapp PATH/TO/MANIFESTS_OR_CHART --version 1.2.4 \
+$ helm install myapp mychart
+```
+
+`helm-x`:
+
+```
+$ helm x install myapp mychart
+```
+
+---
+@title[Example: Patch and diff/install/up whatever as Helm chart]
+
+## Example: Patch and diff/install/up whatever as Helm chart
+
+```
+$ helm x [diff|install|upgrade] --install myapp WHAT --version 1.2.4 \
   -f values.yaml \
   --strategic-merge-patch path/to/strategicmerge.patch.yaml \
   --jsonpatch path/to/json.patch.yaml
-
-$ helm x upgrade --install  myapp PATH/TO/MANIFESTS_OR_CHART --version 1.2.4 \
-  -f values.yaml \
-  --strategic-merge-patch path/to/strategicmerge.patch.yaml \
-  --jsonpatch path/to/json.patch.yaml
 ```
+
+WAHT can be:
+
+- Remote or local helm chart
+- Kustomization
+- Directory containing K8s maniefsts
 
 ---
 @title[Fin.]
