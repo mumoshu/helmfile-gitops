@@ -35,14 +35,14 @@ This project is a demonstration of a highly customizable GitOps pipeline built w
 PLUG: Wanna declaratively manage Argo CD projects? Use [the community Helm chart](https://github.com/chatwork/charts/tree/master/argoproj-crd)
 
 ---
-@title[Problem]
+@title[Problems]
 
-## Problem
+## Problems
 
 ---
-@title[Sub-optimal Customizability]
+@title[Limited Customizability]
 
-### Sub-optimal Customizability
+### Limited Customizability
 
 `flux` and `argocd` has limited extension points. For example, `argocd` has various "hooks" but you stale once get to think "Oh, I wanna argocd to use `helm upgrade` to manage my app as a helm release!"
 
@@ -53,19 +53,29 @@ PLUG: Wanna declaratively manage Argo CD projects? Use [the community Helm chart
 
 Let think about building an end-to-end CI/CD pipeline that leverages GitOps.
 
-A common setup would look like:
+---
+@title[Existing Solution]
+
+## Existing Solution
 
 - Use any CI system for CI(lint, diff, test): Travis, CircleCI, Concourse, Jenkins, Argo CI, ...
 - Use any CD system for CD(deploy/sync/reconcile): Flux, Argo CD, Spinnaker, ...
 
-Go head if you have a big team. But what if your have only a handful of folks to maintain the CI and CD pipeline?
+Go head if you have a big team.
+
+But what if your have only a handful of folks to maintain the CI and CD pipeline?
+
+---
+@title[Goal]
+
+## Goal
 
 Can't we have a single versatile system that handles both CI and CD?
 
 ---
-@title[Goals]
+@title[Issues]
 
-## Goals
+## Issues
 
 ---
 @title[Every aspect of CI/CD pipelines should be customizable]
