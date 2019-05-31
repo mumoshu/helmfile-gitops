@@ -18,11 +18,11 @@ OSS enthusiast maintaining 10+ K8s-related OSS:
 
 ## What is Helm
 
-> ![What is Helm](https://helm.sh/src/img/chart-illustration.png)
-> https://helm.sh/
-
 - Helm is a package manager for K8s
 - "Package" is called "Chart" in Helm
+
+> ![What is Helm](https://helm.sh/src/img/chart-illustration.png)
+> https://helm.sh/
 
 ## What is GitOps
 
