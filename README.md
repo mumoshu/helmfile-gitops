@@ -2,9 +2,12 @@
 
 This project is a demonstration of a highly customizable GitOps pipeline built with [`helmfile`](https://github.com/roboll/helmfile) and [`brigade`](https://github.com/brigadecore/brigade).
 
-## Prior Art
+## Prior Arts
 
-**Weaveworks [Flux](https://github.com/weaveworks/flux) Operator + Raw K8s manifests OR Helm Chart**:
+1 **Weaveworks [Flux](https://github.com/weaveworks/flux) Operator + Raw K8s manifests OR Helm Chart**:
+2 **[Argo CD](https://github.com/argoproj/argo-cd) + K8s Manifests OR Helm Chart OR Helmfile**:
+
+### Flux
 
 > ![Deployment Pipeline](https://github.com/weaveworks/flux/raw/master/site/images/deployment-pipeline.png)
 > https://github.com/weaveworks/flux
@@ -12,7 +15,7 @@ This project is a demonstration of a highly customizable GitOps pipeline built w
 - `flux` fetches git commits and reconsile K8s resources.
 - `helm-operator` reconciles `HelmRelease` resources to reconsile K8s resources.
 
-**[Argo CD](https://github.com/argoproj/argo-cd) + K8s Manifests OR Helm Chart OR Helmfile**:
+### Argo CD
 
 - `argocd` fetches git commits and reconcile K8s resources
 - "argocd config management plugin" to plug-in any K8s manifests builder(ex. ksonnet, kubecfg, etc.)
