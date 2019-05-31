@@ -102,7 +102,7 @@ What if your have only a handful of folks to maintain the CI and CD pipeline?
 
 ## Goal
 
-I wanna have a single system that handles both CI and CD
+SINGLE system that handles BOTH CI and CD
 
 ---
 @title[Issues]
