@@ -80,7 +80,7 @@ PLUG: Wanna declaratively manage Argo CD projects? Use [the community Helm chart
 ex) `argocd` supports custom "hooks".
 
 - But the deployment is hard-coded to `kubectl apply`.
-- How `helm install` it?
+- How to `helm install` it?
 
 ---
 @title[High Nummber of Total Moving-Parts]
