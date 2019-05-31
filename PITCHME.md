@@ -8,6 +8,21 @@ Building highly customizable GitOps pipeline built with Helm
 APPENDIX: The end of Kustomize vs Helm argumen
 
 ---
+@title[About Me]
+
+## About Me
+
+@mumoshu
+
+AWS Container Hero
+
+OSS enthusiast maintaining 10+ K8s-related OSS:
+- [kubernetes-incubator/kube-aws](https://github.com/kubernetes-incubator/kube-aws),
+- [weaveworks/eksctl](https://github.com/weaveworks/eksctl)
+- [roboll/helmfile](https://github.com/roboll/helmfile))
+- [brigadecore/brigade](https://github.com/brigadecore/brigade)
+
+---
 @title[What is Helm]
 
 ## What is Helm
