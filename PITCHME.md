@@ -5,11 +5,15 @@ This project is a demonstration of a highly customizable GitOps pipeline built w
 ---
 @title[Prior Arts]
 
+## Prior Arts
+
 1. **Weaveworks [Flux](https://github.com/weaveworks/flux) Operator + Raw K8s manifests OR Helm Chart**:
 2. **[Argo CD](https://github.com/argoproj/argo-cd) + K8s Manifests OR Helm Chart OR Helmfile**:
 
 ---
 @title[Flux]
+
+### Flux
 
 > ![Flux Deployment Pipeline](https://github.com/weaveworks/flux/raw/master/site/images/deployment-pipeline.png)
 > https://github.com/weaveworks/flux
@@ -19,6 +23,8 @@ This project is a demonstration of a highly customizable GitOps pipeline built w
 
 ---
 @title[Argo CD]
+
+### Argo CD
 
 > ![Argo CD Architecture](https://argoproj.github.io/argo-cd/assets/argocd_architecture.png)
 > https://argoproj.github.io/argo-cd/#architecture
@@ -31,13 +37,19 @@ PLUG: Wanna declaratively manage Argo CD projects? Use [the community Helm chart
 ---
 @title[Problem]
 
+## Problem
+
 ---
 @title[Sub-optimal Customizability]
+
+### Sub-optimal Customizability
 
 `flux` and `argocd` has limited extension points. For example, `argocd` has various "hooks" but you stale once get to think "Oh, I wanna argocd to use `helm upgrade` to manage my app as a helm release!"
 
 ---
 @title[High Nummber of Total Moving-Parts]
+
+### High Nummber of Total Moving-Parts
 
 Let think about building an end-to-end CI/CD pipeline that leverages GitOps.
 
@@ -53,13 +65,19 @@ Can't we have a single versatile system that handles both CI and CD?
 ---
 @title[Goals]
 
+## Goals
+
 ---
 @title[Every aspect of CI/CD pipelines should be customizable]
+
+### Every aspect of CI/CD pipelines should be customizable
 
 Run any workflow composed of scripts and K8s pods programmed with a turing-complete language.
 
 ---
 @title[Single Platform that is capable of handling both CI and CD use-cases]
+
+### Single Platform that is capable of handling both CI and CD use-cases
 
 Divergence between CIOps and GitOps should be small, so that we can easily and/or gradually migrate from CIOps(push-based) to GitOps(pull-based), or vice versa.
 
@@ -68,6 +86,8 @@ Build upon an unviersal workflow engine or alike that is capable of achieving bo
 ---
 @title[Be declarative!]
 
+### Be declarative!
+
 Cluster operations are hard and the life is short. You should focus on expressing what you want to do, not how.
 
 Leverage declarative management. Rely on K8s and K8s operators to reconsile cluster states to the desired states. You focus on writing declarative specs of your K8s apps.
@@ -75,8 +95,12 @@ Leverage declarative management. Rely on K8s and K8s operators to reconsile clus
 ---
 @title[Single Tool that is capable of both local development and remote production usages.]
 
+### Single Tool that is capable of both local development and remote production usages.
+
 ---
 @title[Design]
+
+## Design
 
 - [brigade](https://github.com/brigadecore/brigade)(an open, event-driven K8s scripting platform) as an universal workflow engine that runs both CI and GitOps/CD pipelines
 - [helmfile](https://github.com/roboll/helmfile) to declaratively manage all the apps on K8s
@@ -86,6 +110,8 @@ The only dependencies are GitHub and Kubernetes
 
 ---
 @title[Install]
+
+## Install
 
 1. Grab and install the latest release of [variant](https://github.com/mumoshu/variant)
 2. Create a GitHub App for Brigade following [this guide](https://github.com/brigadecore/brigade-github-app/blob/c04ea3fa28f2e0a3a64d74131bfef1fe7698355a/README.md#1-create-a-github-app)
@@ -102,6 +128,8 @@ The only dependencies are GitHub and Kubernetes
 
 ---
 @title[Usage]
+
+## Usage
 
 ```
 $ variant
