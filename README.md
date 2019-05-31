@@ -5,6 +5,8 @@ Highly customizable GitOps pipeline built with:
 - [`helmfile`](https://github.com/roboll/helmfile)
 - [`brigade`](https://github.com/brigadecore/brigade)
 
+Appendix: The end of Kustomize vs Helm argument
+
 ## Prior Arts
 
 1. **Weaveworks [Flux](https://github.com/weaveworks/flux) Operator + Raw K8s manifests OR Helm Chart**:
@@ -164,3 +166,43 @@ The `brigade` script looks like:
 ## Fin.
 
 https://gitpitch.com/mumoshu/helmfile-gitops
+
+## One More Thing
+
+"The end of the "Kustomize vs Helm argument"
+
+### Everyone Does This
+
+- `helm template mychart | kubectl apply -f`
+- `helm template mychart --outputs-dir manifests/ && (kustomize build | kubectl apply -f -)`
+
+### Don't use `kubectl apply -f`
+
+When you want:
+
+- `helm diff`: Preview changes before apply
+- `helm test`: Run tests included in the chart
+- `helm stauts`: List helm-managed resources and the installation note
+- `helm get values`: Which settings I used when installing this?
+
+### We Can Do Better
+
+- (Optionally) Generate K8s manifests from Helm chart
+- Patch K8s manifests with Kustomize (JSON Patch and Strategic-Merge Patch available)
+- Install the patched manifests with Helm
+
+### Example: helm-x
+
+Yet Another Shamelss Plug: https://github.com/mumoshu/helm-x
+
+```
+$ helm x diff myapp PATH/TO/MANIFESTS_OR_CHART --version 1.2.4 \
+  -f values.yaml \
+  --strategic-merge-patch path/to/strategicmerge.patch.yaml \
+  --jsonpatch path/to/json.patch.yaml
+
+$ helm x upgrade --install  myapp PATH/TO/MANIFESTS_OR_CHART --version 1.2.4 \
+  -f values.yaml \
+  --strategic-merge-patch path/to/strategicmerge.patch.yaml \
+  --jsonpatch path/to/json.patch.yaml
+```
