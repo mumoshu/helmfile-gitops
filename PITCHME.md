@@ -3,7 +3,7 @@
 
 ## State of the Art of GitOps with Helm
 
-Building highly customizable GitOps pipeline built with Helm
+Highly customizable GitOps pipeline built with Helm
 
 APPENDIX: The end of Kustomize vs Helm argument
 
