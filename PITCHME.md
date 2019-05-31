@@ -19,7 +19,7 @@ Appendix: The end of Kustomize vs Helm argument
 > https://www.weave.works/technologies/gitops/
 
 - Pull Git commits
-- Sync K8s resources Git<->Cluster
+- Sync K8s resources Git → Cluster
 
 ---
 @title[State-of-the-Art GitOps Solutions]
@@ -29,6 +29,9 @@ Appendix: The end of Kustomize vs Helm argument
 - Weaveworks [Flux](https://github.com/weaveworks/flux) Operator*
 - [Argo CD](https://github.com/argoproj/argo-cd)
 
+---
+@title[Flux]
+
 #### Flux
 
 > ![Flux Deployment Pipeline](https://github.com/weaveworks/flux/raw/master/site/images/deployment-pipeline.png)
@@ -36,6 +39,9 @@ Appendix: The end of Kustomize vs Helm argument
 
 - `flux` fetches git commits and reconsile K8s resources.
 - `helm-operator` reconciles `HelmRelease` resources to reconsile K8s resources.
+
+---
+@title[Argo CD]
 
 #### Argo CD
 

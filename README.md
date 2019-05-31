@@ -13,7 +13,7 @@ Appendix: The end of Kustomize vs Helm argument
 > https://www.weave.works/technologies/gitops/
 
 - Pull Git commits
-- Sync K8s resources Git<->Cluster
+- Sync K8s resources Git → Cluster
 
 ### State-of-the-Art GitOps Solutions
 
