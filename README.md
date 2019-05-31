@@ -72,25 +72,7 @@ Travis, CircleCI, Concourse, Jenkins, Argo CI, ...
 
 - Flux
 - Argo CD
-- MISSING PIECE = **Single** system that handles both **CI** and **CD**
-
-## Issues
-
-### Every aspect of CI/CD pipelines should be customizable
-
-Run any workflow composed of scripts and K8s pods programmed with a turing-complete language.
-
-### Single Platform that is capable of handling both CI and CD use-cases
-
-Divergence between CIOps and GitOps should be small, so that we can easily and/or gradually migrate from CIOps(push-based) to GitOps(pull-based), or vice versa.
-
-Build upon an unviersal workflow engine or alike that is capable of achieving both CIOps and GitOps.
-
-### Baseline: Be declarative!
-
-Cluster operations are hard and the life is short. You should focus on expressing what you want to do, not how.
-
-Leverage declarative management. Rely on K8s and K8s operators to reconsile cluster states to the desired states. You focus on writing declarative specs of your K8s apps.
+- MISSING PIECE = **Single** customizable system that handles both **CI** and **CD**
 
 ## Example: The Single Tool
 
